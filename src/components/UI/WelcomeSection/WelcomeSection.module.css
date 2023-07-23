@@ -16,6 +16,7 @@
 .title {
     font-size: 30;
     color: white;
+
 }
 
 .text {
@@ -25,7 +26,7 @@
 
 .buttonSection {
     margin-top: 30px;
-    width: 25vw;
-    display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+
 }

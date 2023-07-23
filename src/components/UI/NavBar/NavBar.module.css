@@ -1,9 +1,12 @@
 .container {
     width: 100vw;
     height: 50px;
+    margin-top: 2px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    background-color: aqua;
+    border-width: 0 0 1px 0;
+    border-color: white;
+    border-style: solid;
 }

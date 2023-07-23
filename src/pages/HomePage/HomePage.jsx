@@ -6,8 +6,8 @@ export const HomePage = () => {
 
     return (
         <div className={classes.container}>
-            <NavBar />
             <WelcomeSection />
+            <NavBar />
         </div>
 
     )

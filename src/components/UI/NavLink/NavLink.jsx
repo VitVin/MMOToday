@@ -1,9 +1,9 @@
-
+import classes from './NavLink.module.css'
 
 
 export const NavLink = ({title}) => {
     return (
-        <a>{title}</a>
+        <text className={classes.link}>{title}</text>
 )
 
 }

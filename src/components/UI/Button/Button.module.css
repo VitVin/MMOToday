@@ -8,6 +8,7 @@
     font-size: 15px;
     color: white;
     cursor: pointer;
+    margin: 10px;
 }
 
 .button:hover {
@@ -15,4 +16,10 @@
     color: deepskyblue;
     border-color: deepskyblue;
     background-color: rgba(28, 30, 34, 0.5);
+}
+
+.button:active{
+    box-shadow: 0 0 5px 0 white;
+    color: white;
+    border-color: white;
 }
