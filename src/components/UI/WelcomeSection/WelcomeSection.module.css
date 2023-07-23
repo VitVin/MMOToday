@@ -1,0 +1,31 @@
+.container {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: 0 25%;
+    background-size: cover;
+    background-image: url('../../../images/WelcomeSectionImage.png');
+    background-color: rgba(28, 30, 34, 0.7);
+    background-blend-mode: darken;
+    box-shadow: inset 0px 0px 10px 5px rgb(28, 30, 34);
+}
+
+.title {
+    font-size: 30;
+    color: white;
+}
+
+.text {
+    font-size: 20;
+    color: white;
+}
+
+.buttonSection {
+    margin-top: 30px;
+    width: 25vw;
+    display: flex;
+    justify-content: space-around;
+}
