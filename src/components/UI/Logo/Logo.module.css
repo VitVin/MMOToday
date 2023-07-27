@@ -14,12 +14,14 @@
     cursor: pointer;
     background-blend-mode: color-dodge;
     z-index: 1;
+    transition: 1s;
 }
 
 
 .logo:hover {
-    box-shadow: 0 0 5px 3px deepskyblue;
-    color: deepskyblue;
+    box-shadow: 0 0 10px 2px deepskyblue;
+    color: rgb(2, 149, 255);
+    transition: 2s;
+   
     
-  
 }
