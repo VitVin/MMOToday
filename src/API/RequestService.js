@@ -19,4 +19,23 @@ export class RequestService {
             return error;
         }
     }
+
+    static async getSpecificGame(id) {
+        try {
+            const response = await axios.get('https://mmo-games.p.rapidapi.com/game',
+                options,
+                {
+                params: {
+                    id: id
+                }
+            })
+            return response;
+        }
+        catch (error) {
+            return error;
+        }
+
+    }
+
+
 }

@@ -11,6 +11,7 @@
     transition: all 1s;
     box-shadow: 0 0 20px 5px black;
     border: 2px solid white;
+    cursor: pointer;
 }
 
 .title {
@@ -31,9 +32,22 @@
 }
 
 .container:hover {
-    scale: 1.1;
-
     opacity: 1;
+    box-shadow: 0 0 20px 10px rgb(50, 56, 62);
+    transition: all 1s;
+}
+
+.selectedContainer{
+    scale: 1.1;
+    margin-top: 2px;
+    width: 15%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid white;
     box-shadow: 0 0 20px 10px rgb(50, 56, 62);
     margin-inline: 20px;
     transition: all 1s;

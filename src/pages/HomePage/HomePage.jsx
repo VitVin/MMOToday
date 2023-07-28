@@ -15,10 +15,6 @@ export const HomePage = () => {
         setcheck(false)
     }
 
-
-  
-
-
     useEffect(() => {
         fetchGames();
     }, [])
@@ -30,7 +26,6 @@ export const HomePage = () => {
         <>
             {check ?
                 <p>Loading</p>
-
                 :
                 <div className={classes.container}>
                     <WelcomeSection />
