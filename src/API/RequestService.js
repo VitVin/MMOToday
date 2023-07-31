@@ -11,31 +11,38 @@ const options = {
 
 export class RequestService {
     static async getAllGames() {
-        try {
             const response = await axios.get('https://mmo-games.p.rapidapi.com/games', options)
             return response;
-        }
-        catch (error) {
-            return error;
-        }
     }
 
     static async getSpecificGame(id) {
-        try {
+      
             const response = await axios.get('https://mmo-games.p.rapidapi.com/game',
-                options,
                 {
-                params: {
-                    id: id
+                    headers: options.headers,
+                    method: options.method,
+                    params: {
+                        id: id
+                    }
                 }
-            })
+            )
             return response;
-        }
-        catch (error) {
-            return error;
-        }
-
     }
+
+    static async getSortedGames(sortBy) {
+     
+            const response = await axios.get('https://mmo-games.p.rapidapi.com/games',
+                {
+                    headers: options.headers,
+                    method: options.method,
+                    params: {
+                        'sort-by': sortBy
+                    }
+                }
+            )
+            return response;
+    }
+
 
 
 }

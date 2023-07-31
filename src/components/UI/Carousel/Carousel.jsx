@@ -1,21 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useState } from "react"
 import classes from "./Carousel.module.css"
 import { CarouselItem } from "./CarouselItem/CarouselItem"
-import { RequestService } from "../../../API/RequestService"
+import CarouselBackgroundImage from "../../../images/CarouselBackgroundImage.jpg"
+import { Button } from "../Button/Button"
 
+export const Carousel = ({data}) => {
+    const [numberOfCurrentGame, setNumberOfCurrentGame] = useState(0);
 
-export const Carousel = ({ data }) => {
-    const [numberOfCurrentGame, setNumberOfCurrentGame] = useState(0)
-    const [currentGameData, setCurrentGameData] = useState([])
+    console.log(data)
+    let arrayOfGamesInCarousel = data.slice(0, 5);
 
-
-    const getGameData = async () => {
-        const response = RequestService.getSpecificGame(arrayOfGamesInCarousel)
-
-    }
-
-    let arrayOfGamesInCarousel = data.slice(0, 5)
 
     const nextVideoSwitcher = () => {
         if (numberOfCurrentGame < 4) { setNumberOfCurrentGame(numberOfCurrentGame + 1) }
@@ -24,16 +19,18 @@ export const Carousel = ({ data }) => {
 
 
     return (
+
         <div className={classes.container}>
 
-            <img className={classes.backgroundPicture} src={arrayOfGamesInCarousel[numberOfCurrentGame].thumbnail} />
+     
+
+            <img className={classes.backgroundPicture} alt="" src={"https://www.mmobomb.com/g/1125/tower-of-fantasy-1.jpg"} />
 
             <video className={classes.video}
-                poster={"https://www.mmobomb.com/g/1125/tower-of-fantasy-1.jpg"}
+                poster={CarouselBackgroundImage}
                 src={"https://www.mmobomb.com/g/" + arrayOfGamesInCarousel[numberOfCurrentGame].id + "/videoplayback.webm"}
                 preload="none"
                 muted
-                autoPlay
                 onEnded={nextVideoSwitcher}
             />
 
@@ -41,9 +38,9 @@ export const Carousel = ({ data }) => {
                 {
                     arrayOfGamesInCarousel.map((item, index) =>
                         <CarouselItem title={item.title} pictureURL={item.thumbnail} key={item.id}
-                        number={index}
-                        numberOfCurrentGame={numberOfCurrentGame}
-                        setNumberOfCurrentGame={setNumberOfCurrentGame}/>
+                            number={index}
+                            numberOfCurrentGame={numberOfCurrentGame}
+                            setNumberOfCurrentGame={setNumberOfCurrentGame} />
                     )
                 }
             </div>

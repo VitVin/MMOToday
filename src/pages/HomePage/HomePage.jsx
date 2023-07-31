@@ -4,19 +4,20 @@ import { NavBar } from "../../components/UI/NavBar/NavBar"
 import { WelcomeSection } from "../../components/UI/WelcomeSection/WelcomeSection"
 import classes from "./HomePage.module.css"
 import { RequestService } from "../../API/RequestService"
+import { useFetching } from "../../components/hooks/useFetching"
 
 export const HomePage = () => {
-    const [data, setData] = useState([])
-    const [check, setcheck] = useState(true)
+    const [GamesDataForCarousel, setGamesDataForCarousel] = useState([])
 
-    const fetchGames = async () => {
-        const response = await RequestService.getAllGames()
-        setData(response.data)
-        setcheck(false)
-    }
+    const [fetchGamesForCarousel, isLoading, error] = useFetching(async (sortBy) => {
+        const response = await RequestService.getSortedGames(sortBy)
+        setGamesDataForCarousel(response.data)
+    })
+
+
 
     useEffect(() => {
-        fetchGames();
+        fetchGamesForCarousel('release-date')
     }, [])
 
 
@@ -24,13 +25,13 @@ export const HomePage = () => {
 
     return (
         <>
-            {check ?
+            {isLoading ?
                 <p>Loading</p>
                 :
                 <div className={classes.container}>
                     <WelcomeSection />
                     <NavBar />
-                    <Carousel data={data} />
+                    <Carousel data={GamesDataForCarousel} />
                     <div className={classes.cont} />
                 </div>
 
