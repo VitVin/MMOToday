@@ -5,19 +5,23 @@ import { WelcomeSection } from "../../components/UI/WelcomeSection/WelcomeSectio
 import classes from "./HomePage.module.css"
 import { RequestService } from "../../API/RequestService"
 import { useFetching } from "../../components/hooks/useFetching"
+import { GameCard } from "../../components/UI/GameCard/GameCard"
+import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
 
 export const HomePage = () => {
-    const [GamesDataForCarousel, setGamesDataForCarousel] = useState([])
+    const [data, setData] = useState([]);
 
-    const [fetchGamesForCarousel, isLoading, error] = useFetching(async (sortBy) => {
+
+    const [fetchMostPlayedGames, isLoading, error] = useFetching(async (sortBy) => {
         const response = await RequestService.getSortedGames(sortBy)
-        setGamesDataForCarousel(response.data)
+        setData(response.data.slice(0, 3))
+      
     })
 
 
-
     useEffect(() => {
-        fetchGamesForCarousel('release-date')
+        fetchMostPlayedGames('popularity')
+        console.log(data)
     }, [])
 
 
@@ -31,7 +35,16 @@ export const HomePage = () => {
                 <div className={classes.container}>
                     <WelcomeSection />
                     <NavBar />
-                    <Carousel data={GamesDataForCarousel} />
+                    <Carousel />
+                    <GameCardsContainer title={'Most Played Today'} diarection={'row'}>
+                        {data.map((item, index) => 
+                            <GameCard pictureURL={item.thumbnail} title={item.title} teg={item.genre} key={item.id} />
+                        )
+
+                        }
+
+                    </GameCardsContainer>
+
                     <div className={classes.cont} />
                 </div>
 

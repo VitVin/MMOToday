@@ -1,0 +1,18 @@
+.container {
+    margin: 50px 30px 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.title {
+    margin-left: 20px;
+    color: azure;
+    margin-bottom: 10px;
+}
+
+.gamesCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
