@@ -14,8 +14,8 @@ export const Carousel = () => {
 
 
 
-    const [fetchGamesForCarousel, isLoading, error] = useFetching(async (sortBy) => {
-        const response = await RequestService.getSortedGames(sortBy)
+    const [fetchSortedGamesForCarousel, isLoading, error] = useFetching(async (sortBy) => {
+        const response = await RequestService.getAllGames(sortBy)
         setData(response.data.slice(0, 5))
     })
 
@@ -27,7 +27,7 @@ export const Carousel = () => {
 
 
     useEffect(() => {
-        fetchGamesForCarousel('release-date')
+        fetchSortedGamesForCarousel('release-date');
     }, [])
 
 
@@ -40,13 +40,11 @@ export const Carousel = () => {
                 <>
                     <img className={classes.backgroundPicture} alt="" src={"https://www.mmobomb.com/g/1125/tower-of-fantasy-1.jpg"} />
 
-
                     <video className={classes.video}
                         poster={CarouselBackgroundImage}
                         src={"https://www.mmobomb.com/g/" + data[numberOfCurrentGame].id + "/videoplayback.webm"}
                         preload="none"
                         muted
-                        
                         onEnded={nextVideoSwitcher}
                     />
 

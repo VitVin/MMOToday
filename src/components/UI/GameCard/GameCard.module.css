@@ -5,11 +5,19 @@
     border-radius: 5%;
     background-color: rgb(50, 56, 62);
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.container:hover {
+    scale: 1.02;
+    transition: 1s;
 }
 
 .titleContainer {
     width: 100%;
-    height: 25%;
+    height: 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,6 +29,27 @@
     color: azure;
     margin: 10px;
 }
+
+.description {
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 20px;
+    color: azure;
+}
+
+.container:hover .description {
+    opacity: 1;
+    transition: 1s;
+} 
+
+.container:hover .picture{
+    opacity: 0.3;
+    transition: 1s;
+}
+
 
 .teg {
     padding: 3px;
@@ -34,8 +63,8 @@
 
 .picture {
     width: 100%;
-    height: 75%;
+    height: 80%;
     object-fit: cover;
     border-radius: 5% 5% 0 0;
-
+    transition: 1s;
 }

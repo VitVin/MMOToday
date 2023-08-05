@@ -7,11 +7,11 @@ export const NavBar = () => {
 
   return (
     <div className={classes.container}>
-      <NavLink title={'News'} />
-      <NavLink title={'MMO Games'} />
-      <Logo />
       <NavLink title={'Browser Games'} />
       <NavLink title={'PC Games'} />
+      <Logo />
+      <NavLink title={'All MMO Games'} />
+      <NavLink title={'Search Games'} />
     </div>
   )
 

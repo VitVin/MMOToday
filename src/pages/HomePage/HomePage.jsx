@@ -7,24 +7,34 @@ import { RequestService } from "../../API/RequestService"
 import { useFetching } from "../../components/hooks/useFetching"
 import { GameCard } from "../../components/UI/GameCard/GameCard"
 import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
+import { Footer } from "../../components/UI/Footer/Footer"
+import { Button } from "../../components/UI/Button/Button"
+import { VisitCard } from "../../components/UI/VisitCard/VisitCard"
 
 export const HomePage = () => {
-    const [data, setData] = useState([]);
+    const [gamesData, setGamesData] = useState([]);
+    const [PCgames, setPCGames] = useState([])
+    const [browserGames, setBrowserGames] = useState([])
 
 
-    const [fetchMostPlayedGames, isLoading, error] = useFetching(async (sortBy) => {
-        const response = await RequestService.getSortedGames(sortBy)
-        setData(response.data.slice(0, 3))
-      
+    const [fetchSortedGames, isLoading, error] = useFetching(async (sortBy) => {
+        const response = await RequestService.getAllGames(sortBy)
+        setGamesData(response.data.slice(0, 3))
+    })
+
+    const [fetchGamesByPlatform, isLoadingGamesByPlatform, errorPlatformGames] = useFetching(async (platform) => {
+        const response = await RequestService.getGamesByPlatform(platform)
+        platform === 'pc' ? setPCGames(response.data.slice(0, 6))
+            : setBrowserGames(response.data.slice(0, 6))
     })
 
 
+
     useEffect(() => {
-        fetchMostPlayedGames('popularity')
-        console.log(data)
+        fetchSortedGames('popularity')
+        fetchGamesByPlatform('pc')
+        fetchGamesByPlatform('browser')
     }, [])
-
-
 
 
     return (
@@ -37,17 +47,27 @@ export const HomePage = () => {
                     <NavBar />
                     <Carousel />
                     <GameCardsContainer title={'Most Played Today'} diarection={'row'}>
-                        {data.map((item, index) => 
-                            <GameCard pictureURL={item.thumbnail} title={item.title} teg={item.genre} key={item.id} />
-                        )
-
-                        }
-
+                        {gamesData.map(item =>
+                            <GameCard pictureURL={item.thumbnail} title={item.title} shortDescription={item.short_description} teg={item.genre} key={item.id} />
+                        )}
                     </GameCardsContainer>
+                    <GameCardsContainer title={'PC Games'} diarection={'row'}>
+                        {PCgames.map(item =>
+                            <GameCard pictureURL={item.thumbnail}  title={item.title} shortDescription={item.short_description} teg={item.genre} key={item.id} />
+                        )}
+                    </GameCardsContainer>
+                    <GameCardsContainer title={'Browser Games'} diarection={'row'}>
+                        {browserGames.map(item =>
+                            <GameCard pictureURL={item.thumbnail} title={item.title} shortDescription={item.short_description} teg={item.genre} key={item.id} />
+                        )}
+                    </GameCardsContainer>
+                    <Button title={'Browse games using Filters'} />
+                    <div className={classes.visitCardConteiner}>
+                        <VisitCard />
+                    </div>
 
-                    <div className={classes.cont} />
+                    <Footer />
                 </div>
-
             }
         </>
     )
