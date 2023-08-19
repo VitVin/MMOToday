@@ -46,22 +46,11 @@ export const HomePage = () => {
                     <WelcomeSection />
                     <NavBar />
                     <Carousel />
-                    <GameCardsContainer title={'Most Played Today'} diarection={'row'}>
-                        {gamesData.map(item =>
-                            <GameCard pictureURL={item.thumbnail} title={item.title} shortDescription={item.short_description} teg={item.genre} key={item.id} />
-                        )}
-                    </GameCardsContainer>
-                    <GameCardsContainer title={'PC Games'} diarection={'row'}>
-                        {PCgames.map(item =>
-                            <GameCard pictureURL={item.thumbnail}  title={item.title} shortDescription={item.short_description} teg={item.genre} key={item.id} />
-                        )}
-                    </GameCardsContainer>
-                    <GameCardsContainer title={'Browser Games'} diarection={'row'}>
-                        {browserGames.map(item =>
-                            <GameCard pictureURL={item.thumbnail} title={item.title} shortDescription={item.short_description} teg={item.genre} key={item.id} />
-                        )}
-                    </GameCardsContainer>
+                    <GameCardsContainer title={'Most Played Today'} diarection={'row'} gamesData={gamesData} />
+                    <GameCardsContainer title={'PC Games'} diarection={'row'} gamesData={PCgames} />
+                    <GameCardsContainer title={'Browser Games'} diarection={'row'} gamesData={browserGames} />
                     <Button title={'Browse games using Filters'} />
+                    
                     <div className={classes.visitCardConteiner}>
                         <VisitCard />
                     </div>

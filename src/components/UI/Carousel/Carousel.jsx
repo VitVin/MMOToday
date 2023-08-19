@@ -2,10 +2,12 @@ import React, { useEffect } from "react"
 import { useState } from "react"
 import classes from "./Carousel.module.css"
 import { CarouselItem } from "./CarouselItem/CarouselItem"
+
 import CarouselBackgroundImage from "../../../images/CarouselBackgroundImage.jpg"
 import { Button } from "../Button/Button"
 import { useFetching } from "../../hooks/useFetching"
 import { RequestService } from "../../../API/RequestService"
+import { VideoPlayer } from "../VideoPlayer/VideoPlayer"
 
 export const Carousel = () => {
     const [numberOfCurrentGame, setNumberOfCurrentGame] = useState(0);
@@ -38,15 +40,9 @@ export const Carousel = () => {
             {isLoading ? <></>
                 :
                 <>
-                    <img className={classes.backgroundPicture} alt="" src={"https://www.mmobomb.com/g/1125/tower-of-fantasy-1.jpg"} />
+                    <img className={classes.backgroundPicture} alt="" src={CarouselBackgroundImage} />
 
-                    <video className={classes.video}
-                        poster={CarouselBackgroundImage}
-                        src={"https://www.mmobomb.com/g/" + data[numberOfCurrentGame].id + "/videoplayback.webm"}
-                        preload="none"
-                        muted
-                        onEnded={nextVideoSwitcher}
-                    />
+                    <VideoPlayer positioning={classes.videoPlayerPositioning} id={data[numberOfCurrentGame].id} onEnded={nextVideoSwitcher} />
 
                     <div className={classes.carouselItemsSection}>
                         {

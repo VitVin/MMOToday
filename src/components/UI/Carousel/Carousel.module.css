@@ -10,11 +10,17 @@
     background-color: white;
 }
 
+.videoPlayerPositioning {
+    width: 50%;
+    height: 80%;
+    margin: 10px;
+    position: relative;
+}
 
 .backgroundPicture {
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit: cover;
     position: absolute;
     opacity: 0.5;
 }
@@ -30,14 +36,4 @@
     margin: 5px;
     position: absolute;
     bottom: 10px;
-}
-
-.video {
-    width: 50%;
-    height: 80%;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 0 20px 5px rgb(50, 56, 62);
-    margin: 10px;
-    position: relative;
 }

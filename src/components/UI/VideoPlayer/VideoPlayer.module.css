@@ -1,0 +1,5 @@
+.video {
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0 20px 5px rgb(50, 56, 62);
+}
