@@ -5,8 +5,7 @@ export const Footer = () => {
 
     return (
         <div className={classes.container}>
-            <a href="#top">
-                Up</a>
+            <p>We use FreeToGame.com API as the source of the data</p>
         </div>
     )
 

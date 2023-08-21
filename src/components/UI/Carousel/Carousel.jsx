@@ -4,12 +4,11 @@ import classes from "./Carousel.module.css"
 import { CarouselItem } from "./CarouselItem/CarouselItem"
 
 import CarouselBackgroundImage from "../../../images/CarouselBackgroundImage.jpg"
-import { Button } from "../Button/Button"
 import { useFetching } from "../../hooks/useFetching"
 import { RequestService } from "../../../API/RequestService"
 import { VideoPlayer } from "../VideoPlayer/VideoPlayer"
 
-export const Carousel = () => {
+export const Carousel = ({positioning}) => {
     const [numberOfCurrentGame, setNumberOfCurrentGame] = useState(0);
     const [data, setData] = useState([]);
 
@@ -35,7 +34,7 @@ export const Carousel = () => {
 
     return (
 
-        <div className={classes.container}>
+        <div className={classes.container + ' ' + positioning}>
 
             {isLoading ? <></>
                 :

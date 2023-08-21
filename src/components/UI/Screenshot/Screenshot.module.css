@@ -1,0 +1,5 @@
+.screenshot {
+    object-fit: cover;
+    border: 3px solid azure;
+    cursor: pointer;
+}

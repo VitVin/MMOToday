@@ -3,10 +3,3 @@
     flex-wrap: wrap;
 }
 
-.screenshot {
-    width: 45%;
-    margin: 5px;
-    object-fit: cover;
-    border: 3px solid azure;
-    cursor: pointer;
-}

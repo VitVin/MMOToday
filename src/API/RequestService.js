@@ -39,6 +39,24 @@ export class RequestService {
         return response;
     }
 
+    static async getFilteredGames( tags, platform) {
+
+        console.log(platform, ' ', tags)
+
+        const response = await axios.get('https://free-to-play-games-database.p.rapidapi.com/api/filter',
+            {
+                headers: options.headers,
+                method: options.method,
+                params: {
+                    tag: tags,
+                    platform: platform,
+                }
+            }
+        )
+        return response;
+    }
+
+
     static async getSpecificGame(id) {
 
         const response = await axios.get('https://free-to-play-games-database.p.rapidapi.com/api/game',

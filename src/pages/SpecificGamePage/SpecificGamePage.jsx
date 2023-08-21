@@ -7,37 +7,57 @@ import { VideoPlayer } from "../../components/UI/VideoPlayer/VideoPlayer"
 import { DescriptionSection } from "../../components/UI/DescriptionSection/DescriptionSection"
 import { ColoredButton } from "../../components/UI/ColoredButton/ColoredButton"
 import { ScreenshotsList } from "../../components/UI/ScreenshotsList/ScreenshotsList"
+import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
 
 
 export const SpecificGamePage = () => {
-    const params = useParams()
+    const params = useParams();
     const [gameData, setGameData] = useState([])
-
+    const [GamesFromTopData, setGamesFromTopData] = useState([])
 
 
     const [fetchGameData, isLoading, error] = useFetching(async (id) => {
         const response = await RequestService.getSpecificGame(id)
         setGameData(response.data)
+        console.log(gameData)
     })
+
+
+    const [fetchGamesFromTop, isGamesFromTopLoading, gameFromToperror] = useFetching(async (sortBy) => {
+        const response = await RequestService.getAllGames(sortBy)
+        const RandomGamesFromTop100 = Math.floor(Math.random() * 94)
+        setGamesFromTopData(response.data.slice(RandomGamesFromTop100, RandomGamesFromTop100 + 6))
+    })
+
+
 
 
     useEffect(() => {
         fetchGameData(params.id)
-    }, [])
+        fetchGamesFromTop('popularity')
+    }, [params.id])
+
+
 
 
     return (
         <>
             {isLoading ? <></> :
-
-                <div className={classes.container}>
+                <div className={classes.mainContainer}>
 
                     <div className={classes.sideSection}>
                         <img className={classes.poster} src={gameData.thumbnail} />
-                        <ColoredButton positioning={classes.coloredButtonPositioning} title={'Play now'} />
+
+                        <a href={gameData.game_url} target="_blank" >
+                            <ColoredButton positioning={classes.coloredButtonPositioning} title={'Play now'} />
+                        </a>
+
                         <div>
                             <h2>Screenshots</h2>
-                            <ScreenshotsList screenshotsPictures={gameData.screenshots}  positioning={classes.screenshotsListPositioning}/>
+                            <ScreenshotsList positioning={classes.screenshotsListPositioning}
+                                elementsPositioning={classes.elements}
+                                screenshotsPictures={gameData.screenshots}
+                            />
                         </div>
                     </div>
 
@@ -79,10 +99,18 @@ export const SpecificGamePage = () => {
                             : <></>
                         }
 
+                        {isGamesFromTopLoading ? <p>Loading</p> :
+                            <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
+                                elementsPositioning={classes.elements}
+                                title={'Games from Top 100 by popularity'}
+                                gamesData={GamesFromTopData} />
+                        }
                     </div>
                 </div>
-
             }
+
+
+
 
         </>
     )

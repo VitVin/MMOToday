@@ -39,25 +39,44 @@ export const HomePage = () => {
 
     return (
         <>
-            {isLoading ?
-                <p>Loading</p>
-                :
-                <div className={classes.container}>
-                    <WelcomeSection />
-                    <NavBar />
-                    <Carousel />
-                    <GameCardsContainer title={'Most Played Today'} diarection={'row'} gamesData={gamesData} />
-                    <GameCardsContainer title={'PC Games'} diarection={'row'} gamesData={PCgames} />
-                    <GameCardsContainer title={'Browser Games'} diarection={'row'} gamesData={browserGames} />
-                    <Button title={'Browse games using Filters'} />
-                    
-                    <div className={classes.visitCardConteiner}>
-                        <VisitCard />
-                    </div>
 
-                    <Footer />
+            <div className={classes.container}>
+                <WelcomeSection />
+                <NavBar />
+                <Carousel positioning={classes.carouselPositioning} />
+                {isLoading ? <p>Loading</p> :
+                    <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
+                        elementsPositioning={classes.elements}
+                        title={'Most Played Today'}
+                        diarection={'row'}
+                        gamesData={gamesData} />
+                }
+
+                {isLoadingGamesByPlatform ? <p>Loading</p> :
+                    <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
+                        elementsPositioning={classes.elements}
+                        title={'PC Games'}
+                        diarection={'row'}
+                        gamesData={PCgames} />
+
+                }   {isLoadingGamesByPlatform ? <p>Loading</p> :
+
+                    <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
+                        elementsPositioning={classes.elements}
+                        title={'Browser Games'}
+                        diarection={'row'}
+                        gamesData={browserGames} />
+                }
+
+                <Button title={'Browse games using Filters'} />
+
+                <div className={classes.visitCardConteiner}>
+                    <VisitCard />
                 </div>
-            }
+
+                <Footer />
+            </div>
+
         </>
     )
 }
