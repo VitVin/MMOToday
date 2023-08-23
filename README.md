@@ -4,6 +4,10 @@ This project is being developed to demonstrate my front end development skills.
 Here you can find how I solve typical cases,
 and how I find interesting implementations of my own creative ideas.
 
+You can check what has already been done here: https://vitvin.github.io/SiteAboutGames/
+
+Note!: The project is still in development.
+
 <H1>Idea</H1>
 
 I took as an idea a website for gamers where you could follow popular games,
