@@ -73,8 +73,6 @@ export const HomePage = () => {
                 <div className={classes.visitCardConteiner}>
                     <VisitCard />
                 </div>
-
-                <Footer />
             </div>
 
         </>

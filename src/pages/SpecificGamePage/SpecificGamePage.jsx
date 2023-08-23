@@ -8,7 +8,7 @@ import { DescriptionSection } from "../../components/UI/DescriptionSection/Descr
 import { ColoredButton } from "../../components/UI/ColoredButton/ColoredButton"
 import { ScreenshotsList } from "../../components/UI/ScreenshotsList/ScreenshotsList"
 import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
-
+import { NavBar } from "../../components/UI/NavBar/NavBar"
 
 export const SpecificGamePage = () => {
     const params = useParams();
@@ -42,69 +42,73 @@ export const SpecificGamePage = () => {
 
     return (
         <>
+
             {isLoading ? <></> :
                 <div className={classes.mainContainer}>
+                    <NavBar positioning={classes.navBarPositioning}/>
+                    <div className={classes.containerWraper}>
 
-                    <div className={classes.sideSection}>
-                        <img className={classes.poster} src={gameData.thumbnail} />
+                        <div className={classes.sideSection}>
+                            <img className={classes.poster} src={gameData.thumbnail} />
 
-                        <a href={gameData.game_url} target="_blank" >
-                            <ColoredButton positioning={classes.coloredButtonPositioning} title={'Play now'} />
-                        </a>
+                            <a href={gameData.game_url} target="_blank" >
+                                <ColoredButton positioning={classes.coloredButtonPositioning} title={'Play now'} />
+                            </a>
 
-                        <div>
-                            <h2>Screenshots</h2>
-                            <ScreenshotsList positioning={classes.screenshotsListPositioning}
-                                elementsPositioning={classes.elements}
-                                screenshotsPictures={gameData.screenshots}
-                            />
-                        </div>
-                    </div>
-
-
-                    <div className={classes.mainSection}>
-                        <h1>{gameData.title}</h1>
-
-                        <div className={classes.videoPlayerSection}>
-                            <VideoPlayer positioning={classes.videoPlayerPositioning} id={gameData.id} />
                             <div>
-                                <p>Status: {gameData.status}</p>
-                                <p>Genre: {gameData.genre}</p>
-                                <p>Platform: {gameData.platform}</p>
-                                <p>Release date: {gameData.release_date}</p>
-                                <p>Developer: {gameData.developer}</p>
-                                <p>Publisher: {gameData.publisher}</p>
+                                <h2>Screenshots</h2>
+                                <ScreenshotsList positioning={classes.screenshotsListPositioning}
+                                    elementsPositioning={classes.elements}
+                                    screenshotsPictures={gameData.screenshots}
+                                />
+                            </div>
+                        </div>
+
+
+                        <div className={classes.mainSection}>
+                            <h1>{gameData.title}</h1>
+
+                            <div className={classes.videoPlayerSection}>
+                                <VideoPlayer positioning={classes.videoPlayerPositioning} id={gameData.id} />
+                                <div>
+                                    <p>Status: {gameData.status}</p>
+                                    <p>Genre: {gameData.genre}</p>
+                                    <p>Platform: {gameData.platform}</p>
+                                    <p>Release date: {gameData.release_date}</p>
+                                    <p>Developer: {gameData.developer}</p>
+                                    <p>Publisher: {gameData.publisher}</p>
+                                </div>
+
                             </div>
 
-                        </div>
-
-                        <DescriptionSection title={'About Game'} >
-                            <p>{gameData.description}</p>
-                        </DescriptionSection>
-
-                        {gameData.minimum_system_requirements !== undefined ?
-                            <DescriptionSection title={'Minimum System Requirements'}>
-                                <div className={classes.minSysReqContainer}>
-                                    <div>
-                                        <p>OS: <br /> <span>{gameData.minimum_system_requirements.os}</span></p>
-                                        <p>Memory: <br /><span>{gameData.minimum_system_requirements.memory}</span></p>
-                                        <p>Storage: <br /><span>{gameData.minimum_system_requirements.storage}</span></p>
-                                    </div>
-                                    <div>
-                                        <p>Processor: <br /><span>{gameData.minimum_system_requirements.processor}</span></p>
-                                        <p>Graphics: <br /><span>{gameData.minimum_system_requirements.graphics}</span></p>
-                                    </div>
-                                </div>
+                            <DescriptionSection title={'About Game'} >
+                                <p>{gameData.description}</p>
                             </DescriptionSection>
-                            : <></>
-                        }
 
-                        {isGamesFromTopLoading ? <p>Loading</p> :
-                            <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
-                                elementsPositioning={classes.elements}
-                                title={'Games from Top 100 by popularity'}
-                                gamesData={GamesFromTopData} />
-                        }
+                            {gameData.minimum_system_requirements !== undefined ?
+                                <DescriptionSection title={'Minimum System Requirements'}>
+                                    <div className={classes.minSysReqContainer}>
+                                        <div>
+                                            <p>OS: <br /> <span>{gameData.minimum_system_requirements.os}</span></p>
+                                            <p>Memory: <br /><span>{gameData.minimum_system_requirements.memory}</span></p>
+                                            <p>Storage: <br /><span>{gameData.minimum_system_requirements.storage}</span></p>
+                                        </div>
+                                        <div>
+                                            <p>Processor: <br /><span>{gameData.minimum_system_requirements.processor}</span></p>
+                                            <p>Graphics: <br /><span>{gameData.minimum_system_requirements.graphics}</span></p>
+                                        </div>
+                                    </div>
+                                </DescriptionSection >
+                                : <></>
+                            }
+
+                            {isGamesFromTopLoading ? <p>Loading</p> :
+                                <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
+                                    elementsPositioning={classes.elements}
+                                    title={'Games from Top 100 by popularity'}
+                                    gamesData={GamesFromTopData} />
+                            }
+                        </div>
                     </div>
                 </div>
             }

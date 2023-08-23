@@ -5,6 +5,7 @@ import { BrowserGamesPage } from "../pages/BrowserGamesPage/BrowserGamesPage";
 import { SearchGamesPage } from "../pages/SearchGamesPage/SearchGamesPage";
 import { SpecificGamePage } from "../pages/SpecificGamePage/SpecificGamePage";
 import { NavBar } from "../components/UI/NavBar/NavBar";
+import { Footer } from "../components/UI/Footer/Footer";
 
 
 export const AppRouter = () => {
@@ -19,7 +20,7 @@ export const AppRouter = () => {
                 <Route path="/Game/:id" element={<SpecificGamePage />} />
                 <Route path="*" element={<Navigate replace to="/Home" />} />
             </Routes>
-
+            <Footer />
         </BrowserRouter>
     );
 }

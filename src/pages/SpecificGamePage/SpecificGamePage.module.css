@@ -1,14 +1,25 @@
 .mainContainer {
     width: 100vw;
     display: flex;
-    justify-content: space-around;
-  
-    background-color: rgb(28, 30, 34);
+    flex-direction: column;
+    background: linear-gradient(to top, rgb(48, 49, 51), rgb(28, 30, 34));
 }
 
+.navBarPositioning {
+    border-top: 2px solid rgb(48, 49, 51);
+    border-bottom: 1px solid white;
+    background-color: rgb(28, 30, 34);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+.containerWraper {
+    display: flex;
+    justify-content: space-around;
+}
 
 .sideSection {
+    margin-top: 20px;
     width: 25%;
     height: 100%;
     display: flex;

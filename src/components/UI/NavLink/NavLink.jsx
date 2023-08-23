@@ -1,9 +1,9 @@
 import classes from './NavLink.module.css'
 
 
-export const NavLink = ({title}) => {
+export const NavLink = ({title, onClick}) => {
     return (
-        <text className={classes.link}>{title}</text>
+        <p className={classes.link} onClick={onClick}>{title}</p>
 )
 
 }

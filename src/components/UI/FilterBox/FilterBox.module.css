@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table {
+    width: 100vw;
+    border-radius: 10px;
+    background-color:  rgb(28, 30, 34);;
+    color: azure;
+
+    & .tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+   
+    }
+
+    & .selectors {
+        display: flex;
+        justify-content: space-around;
+    }
+}
