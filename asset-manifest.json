@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/SiteAboutGames/static/css/main.869ef095.css",
+    "main.js": "/SiteAboutGames/static/js/main.ee81edc1.js",
+    "static/media/WelcomeSectionImage.png": "/SiteAboutGames/static/media/WelcomeSectionImage.8051d8917d2ed3374472.png",
+    "static/media/HomePageBackgroundSection.jpg": "/SiteAboutGames/static/media/HomePageBackgroundSection.f67ded03c5a36432e0c9.jpg",
+    "static/media/VisitCardLogo.png": "/SiteAboutGames/static/media/VisitCardLogo.09342c3d1b126297db3c.png",
+    "static/media/CarouselBackgroundImage.jpg": "/SiteAboutGames/static/media/CarouselBackgroundImage.2cbf7b90da91be4b6a73.jpg",
+    "static/media/VideoBackgroundImage.jpg": "/SiteAboutGames/static/media/VideoBackgroundImage.228cd29f0a307a90a08c.jpg",
+    "static/media/Logo.png": "/SiteAboutGames/static/media/Logo.6ec99e29c4643e9cb625.png",
+    "index.html": "/SiteAboutGames/index.html",
+    "main.869ef095.css.map": "/SiteAboutGames/static/css/main.869ef095.css.map",
+    "main.ee81edc1.js.map": "/SiteAboutGames/static/js/main.ee81edc1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.869ef095.css",
+    "static/js/main.ee81edc1.js"
+  ]
+}
