@@ -8,7 +8,7 @@ import classes from './TagForFilter.module.css'
 export const TagForFilter = ({title}) => {
 
     return (
-            <p>{title}</p>
+            <p className={classes.tag}>{title}</p>
     )
 
 }
