@@ -1,9 +1,9 @@
 import classes from "./Logo.module.css"
 
-export const Logo = ({onClick}) => {
+export const Logo = () => {
 
     return (
-        <button className={classes.logo} onClick={()=>onClick}>
+        <button className={classes.logo} >
             <text className={classes.text}>MMOToday</text>
         </button>
     )

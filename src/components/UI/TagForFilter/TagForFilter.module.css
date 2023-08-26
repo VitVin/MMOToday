@@ -1,8 +1,19 @@
 .tag {
     font-size: 15px;
     margin: 5px;
-    border-radius: 7%;
-    border: 1px solid azure;
     padding: 3px;
     color: gray;
+}
+
+.tagSelected{
+    font-size: 15px;
+    margin: 5px;
+    padding: 3px;
+    color: gray;
+    background-color: azure;
+    border-radius: 20px;
+}
+
+.box {
+    display: none;
 }

@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    align-items: center;
+    width: calc(100%/6);
+    border-radius: 30px;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.topSection {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    border-radius: 5px;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.contentEnter {
+    opacity: 0;
+}
+
+.contentEnterActive {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.contentExit {
+    opacity: 1;
+}
+
+.contentExitActive {
+    opacity: 0;
+    transition: 1s;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
