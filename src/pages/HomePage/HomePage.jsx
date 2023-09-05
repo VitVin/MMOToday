@@ -10,12 +10,13 @@ import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsCon
 import { Footer } from "../../components/UI/Footer/Footer"
 import { Button } from "../../components/UI/Button/Button"
 import { VisitCard } from "../../components/UI/VisitCard/VisitCard"
+import { useNavigate } from "react-router-dom"
 
 export const HomePage = () => {
     const [gamesData, setGamesData] = useState([]);
     const [PCgames, setPCGames] = useState([])
     const [browserGames, setBrowserGames] = useState([])
-
+    const router = useNavigate();
 
     const [fetchSortedGames, isLoading, error] = useFetching(async (sortBy) => {
         const response = await RequestService.getAllGames(sortBy)
@@ -68,7 +69,7 @@ export const HomePage = () => {
                         gamesData={browserGames} />
                 }
 
-                <Button title={'Browse games using Filters'} />
+                <Button title={'Browse games using Filters'} onClick={()=> router('/Search')}/>
 
                 <div className={classes.visitCardConteiner}>
                     <VisitCard />

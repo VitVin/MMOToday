@@ -2,16 +2,26 @@
     font-size: 15px;
     margin: 5px;
     padding: 3px;
-    color: gray;
+    color: azure;
+    transition: all 1s;
+    cursor: pointer;
+
 }
 
-.tagSelected{
+.tag:hover {
+ 
+    transition: 0.5s;
+}
+
+.tagSelected {
     font-size: 15px;
     margin: 5px;
     padding: 3px;
-    color: gray;
+    color: black;
     background-color: azure;
     border-radius: 20px;
+    transition: background-color 0.5s;
+    cursor: pointer;
 }
 
 .box {

@@ -4,7 +4,7 @@ export const Logo = () => {
 
     return (
         <button className={classes.logo} >
-            <text className={classes.text}>MMOToday</text>
+            <p className={classes.text}>MMOToday</p>
         </button>
     )
 

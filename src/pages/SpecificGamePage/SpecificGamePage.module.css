@@ -2,7 +2,7 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to top, rgb(48, 49, 51), rgb(28, 30, 34));
+    background:  radial-gradient( 50% 60% at top, deepskyblue, rgb(0, 0, 0));
 }
 
 .navBarPositioning {
@@ -55,6 +55,7 @@
     margin-top: 20px;
     color: azure;
     width: 65%;
+ 
 
     & h1 {
         margin-bottom: 10px;
@@ -98,7 +99,6 @@
 
 .minSysReqContainer {
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     color: darkgrey;
@@ -106,6 +106,9 @@
 
     & p {
         margin: 5px;
+        background-color: rgba(240, 255, 255, 0.5);
+        border-radius: 10px;
+        padding: 5px;
     }
 
     & span {

@@ -1,9 +1,12 @@
 * {
   margin: 0;
+  padding: 0;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
 
- 
-
-}
 ::-webkit-scrollbar {
   width: 0;
 

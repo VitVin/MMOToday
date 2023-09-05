@@ -10,11 +10,14 @@
     background-color: rgb(28, 30, 34);
     box-shadow: 0 0 3px 2px white;
     color: rgb(255, 255, 255);
-    font-size: 15px;
     cursor: pointer;
     background-blend-mode: color-dodge;
     z-index: 1;
     transition: 2s;
+
+    & .text{
+        font-size: 15px;
+    }
 }
 
 

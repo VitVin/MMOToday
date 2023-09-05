@@ -46,15 +46,14 @@ export const SpecificGamePage = () => {
             {isLoading ? <></> :
                 <div className={classes.mainContainer}>
                     <NavBar positioning={classes.navBarPositioning}/>
+
                     <div className={classes.containerWraper}>
 
                         <div className={classes.sideSection}>
                             <img className={classes.poster} src={gameData.thumbnail} />
-
                             <a href={gameData.game_url} target="_blank" >
                                 <ColoredButton positioning={classes.coloredButtonPositioning} title={'Play now'} />
                             </a>
-
                             <div>
                                 <h2>Screenshots</h2>
                                 <ScreenshotsList positioning={classes.screenshotsListPositioning}
@@ -64,8 +63,8 @@ export const SpecificGamePage = () => {
                             </div>
                         </div>
 
-
                         <div className={classes.mainSection}>
+
                             <h1>{gameData.title}</h1>
 
                             <div className={classes.videoPlayerSection}>
@@ -88,15 +87,15 @@ export const SpecificGamePage = () => {
                             {gameData.minimum_system_requirements !== undefined ?
                                 <DescriptionSection title={'Minimum System Requirements'}>
                                     <div className={classes.minSysReqContainer}>
-                                        <div>
+                                      
                                             <p>OS: <br /> <span>{gameData.minimum_system_requirements.os}</span></p>
                                             <p>Memory: <br /><span>{gameData.minimum_system_requirements.memory}</span></p>
                                             <p>Storage: <br /><span>{gameData.minimum_system_requirements.storage}</span></p>
-                                        </div>
-                                        <div>
+                                       
+                                       
                                             <p>Processor: <br /><span>{gameData.minimum_system_requirements.processor}</span></p>
                                             <p>Graphics: <br /><span>{gameData.minimum_system_requirements.graphics}</span></p>
-                                        </div>
+                                        
                                     </div>
                                 </DescriptionSection >
                                 : <></>
@@ -108,8 +107,11 @@ export const SpecificGamePage = () => {
                                     title={'Games from Top 100 by popularity'}
                                     gamesData={GamesFromTopData} />
                             }
+
                         </div>
+
                     </div>
+
                 </div>
             }
 

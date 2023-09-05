@@ -1,4 +1,8 @@
 {
+    "PLATFORM":[
+        "pc",
+        "browser"
+    ],
     "GRAPHICS": [
         "3d",
         "2d",

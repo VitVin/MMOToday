@@ -1,0 +1,11 @@
+input {
+    background-color: rgba(0, 0, 0, 1);
+    color: azure;
+    font-size: 15px;
+    text-align: center;
+}
+
+input:focus {
+    border: 2px solid azure;
+
+}
