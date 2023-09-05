@@ -2,16 +2,16 @@ import { useEffect, useState } from 'react';
 import { NavBar } from '../../components/UI/NavBar/NavBar';
 import { GameCardsContainer } from '../../components/UI/PageSection/GameCardsContainer';
 import { useFetching } from '../../components/hooks/useFetching';
-import classes from './PCGamesPage.module.css'
+import classes from './AllGamesPage.module.css'
 import { RequestService } from '../../API/RequestService';
 
 
-export const PCGamesPage = () => {
+export const AllGamesPage = () => {
 
     const [gamesData, setGamesData] = useState([]);
 
-    const [fetchGamesByPlatform, isLoadingGamesByPlatform, errorPlatformGames] = useFetching(async (platform) => {
-        const response = await RequestService.getGamesByPlatform(platform)
+    const [fetcAllhGames, isLoadingAllGames, errorAllGames] = useFetching(async (sortBy) => {
+        const response = await RequestService.getAllGames(sortBy)
         setGamesData(response.data)
         console.log(response.data)
     })
@@ -19,7 +19,7 @@ export const PCGamesPage = () => {
     
 
     useEffect(() => {
-        fetchGamesByPlatform('pc')
+        fetcAllhGames('popularity')
     },[])
 
     return (
@@ -27,7 +27,7 @@ export const PCGamesPage = () => {
 
             <NavBar positioning={classes.navBarPositioning} />
 
-            <GameCardsContainer title={'All PC Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning}/>
+            <GameCardsContainer title={'All Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning}/>
 
 
         </div>

@@ -6,6 +6,7 @@ import { SearchGamesPage } from "../pages/SearchGamesPage/SearchGamesPage";
 import { SpecificGamePage } from "../pages/SpecificGamePage/SpecificGamePage";
 import { NavBar } from "../components/UI/NavBar/NavBar";
 import { Footer } from "../components/UI/Footer/Footer";
+import { AllGamesPage } from "../pages/AllGamesPage/AllGamesPage";
 
 
 export const AppRouter = () => {
@@ -14,6 +15,7 @@ export const AppRouter = () => {
 
             <Routes>
                 <Route path="/Home" element={<HomePage />} />
+                <Route path="/AllGames" element={<AllGamesPage />} />
                 <Route path="/PCGames" element={<PCGamesPage />} />
                 <Route path="/BrowserGames" element={<BrowserGamesPage />} />
                 <Route path="/Search" element={<SearchGamesPage />} />

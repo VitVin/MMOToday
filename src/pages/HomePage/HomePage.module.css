@@ -2,9 +2,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: fixed radial-gradient( 50% 70%, deepskyblue , rgb(0, 0, 0) );
+    background: fixed radial-gradient(50% 70%, deepskyblue, rgb(0, 0, 0));
     background-position: center;
     width: 100vw;
+}
+
+.welcomeSection {
+
+  
+}
+
+.buttonPositioning {
+    width: 10%;
+    height: 20%;
+    margin-top: 30px;
 }
 
 .carouselPositioning {
@@ -17,7 +28,7 @@
 
     & .elements {
         width: 30vw;
-        height: 40vh;
+        height: 43vh;
         margin: 10px;
     }
 }
@@ -28,4 +39,154 @@
     align-items: center;
     width: 100%;
     height: 500px;
+}
+
+.visitCardPositioning {
+    width: 50vw;
+}
+
+
+@media (max-width: 1200px) {
+    .gameCardsContainerPositioning {
+        margin: 50px 20px 0px;
+
+        & .elements {
+            width: 30vw;
+            height: 35vh;
+            margin: 10px;
+        }
+    }
+
+    .buttonPositioning {
+        width: 10%;
+        height: 15%;
+    }
+
+    .visitCardPositioning {
+        width: 60vw;
+        padding: 10px;
+    }
+
+    .carouselPositioning {
+        width: 100%;
+        height: 50vh;
+    }
+}
+
+@media (max-width: 992px) {
+    .gameCardsContainerPositioning {
+        margin: 30px 10px 0px;
+
+        & .elements {
+            width: 30vw;
+            height: 30vh;
+            margin: 10px;
+        }
+    }
+
+    .buttonPositioning {
+        width: 12%;
+    }
+
+    .visitCardPositioning {
+        width: 70vw;
+    }
+
+    .carouselPositioning {
+        width: 100%;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .gameCardsContainerPositioning {
+        margin: 30px 0px 0px;
+
+        & .elements {
+            width: 32vw;
+            height: 25vh;
+            margin: 5px;
+        }
+    }
+
+    .buttonPositioning {
+        width: 15%;
+    }
+
+    .visitCardPositioning {
+        width: 80vw;
+        padding: 0px;
+    }
+
+    .carouselPositioning {
+        width: 100%;
+        height: 40vh;
+    }
+
+}
+
+@media (max-width: 750px) {
+    .gameCardsContainerPositioning {
+        margin: 30px 0px 0px;
+
+        & .elements {
+            width: 90vw;
+            height: 50vh;
+            margin: 5px;
+        }
+    }
+
+    .visitCardPositioning {
+        width: 90vw;
+    }
+
+    .carouselPositioning {
+        display: none;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .gameCardsContainerPositioning {
+        margin: 30px 0px 0px;
+
+        & .elements {
+            width: 95vw;
+            height: 45vh;
+            margin: 5px;
+        }
+    }
+
+    .buttonPositioning {
+        width: 25%;
+        height: 15%;
+    }
+
+    .visitCardPositioning {
+        flex-direction: column;
+        width: 90vw;
+    }
+
+}
+
+
+@media (max-width: 375px) {
+    .gameCardsContainerPositioning {
+        margin: 30px 0px 0px;
+
+        & .elements {
+            width: 95vw;
+            height: 30vh;
+            margin: 5px;
+        }
+    }
+
+    .buttonPositioning {
+        width: 30%;
+    }
+    .visitCardPositioning {
+        width: 80vw;
+        padding: 10px;
+    }
+
 }

@@ -5,9 +5,7 @@ import { WelcomeSection } from "../../components/UI/WelcomeSection/WelcomeSectio
 import classes from "./HomePage.module.css"
 import { RequestService } from "../../API/RequestService"
 import { useFetching } from "../../components/hooks/useFetching"
-import { GameCard } from "../../components/UI/GameCard/GameCard"
 import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
-import { Footer } from "../../components/UI/Footer/Footer"
 import { Button } from "../../components/UI/Button/Button"
 import { VisitCard } from "../../components/UI/VisitCard/VisitCard"
 import { useNavigate } from "react-router-dom"
@@ -42,9 +40,10 @@ export const HomePage = () => {
         <>
 
             <div className={classes.container}>
-                <WelcomeSection />
+                <WelcomeSection positioning={classes.welcomeSection} buttonPositioning={classes.buttonPositioning}/>
                 <NavBar />
                 <Carousel positioning={classes.carouselPositioning} />
+             
                 {isLoading ? <p>Loading</p> :
                     <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
                         elementsPositioning={classes.elements}
@@ -69,10 +68,10 @@ export const HomePage = () => {
                         gamesData={browserGames} />
                 }
 
-                <Button title={'Browse games using Filters'} onClick={()=> router('/Search')}/>
+                <Button positioning={classes.buttonPositioning} title={'Browse games using Filters'} onClick={()=> router('/Search')}/>
 
                 <div className={classes.visitCardConteiner}>
-                    <VisitCard />
+                    <VisitCard positioning={classes.visitCardPositioning}/>
                 </div>
             </div>
 
