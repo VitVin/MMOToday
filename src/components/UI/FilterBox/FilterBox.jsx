@@ -1,18 +1,13 @@
 import { CSSTransition } from "react-transition-group"
-import { InputSearch } from "../InputSearch/InputSearch"
 import { MenuForFilter } from "../MenuForFilter/MenuForFilter"
 import { TagForFilter } from "../TagForFilter/TagForFilter"
 import classes from "./FilterBox.module.css"
-import { useState } from "react"
-import { ColoredButton } from "../ColoredButton/ColoredButton"
-import { HiAdjustmentsHorizontal, HiMiniMagnifyingGlass, HiOutlineArrowPath } from 'react-icons/hi2';
-import { useEffect } from "react"
 
-export const FilterBox = ({ tagsList, selectedTags, setSelectedTags, platform, setPlatform, fetchGames }) => {
+export const FilterBox = ({ tagsList, selectedTags, setSelectedTags, platform, setPlatform, fetchGames, isOpened, setIsOpened }) => {
 
-    const [isFiltersOpened, setIsFiltersOpened] = useState(false)
-    
-    
+
+
+
 
     const platformSetter = (tag) => {
         platform.includes(tag) ?
@@ -39,33 +34,15 @@ export const FilterBox = ({ tagsList, selectedTags, setSelectedTags, platform, s
         )
     }
 
-    useEffect(() => {
-        setIsFiltersOpened(true)
-    }, [])
+
 
     return (
         <div className={classes.container}>
 
-            <div className={classes.inputSection}>
-                <HiOutlineArrowPath className={classes.icon} onClick={() => {
-                    setPlatform('')
-                    setSelectedTags('')
-                    if (isFiltersOpened) {
-                        setIsFiltersOpened(false)
-                        setTimeout(() => {
-                            setIsFiltersOpened(true)
-                        }, 2100);
-                    }
-
-                }} />
-                <HiAdjustmentsHorizontal className={classes.icon} onClick={() => setIsFiltersOpened(!isFiltersOpened)} />
-                <InputSearch positioning={classes.input} />
-                <HiMiniMagnifyingGlass className={classes.icon} onClick={() => { fetchGames(); setIsFiltersOpened(false) }} />
-
-            </div>
+         
 
             <CSSTransition
-                in={isFiltersOpened}
+                in={isOpened}
                 timeout={2000}
                 mountOnEnter
                 unmountOnExit
@@ -108,9 +85,6 @@ export const FilterBox = ({ tagsList, selectedTags, setSelectedTags, platform, s
 
                 </div>
             </CSSTransition>
-
-
-
         </div>
     )
 

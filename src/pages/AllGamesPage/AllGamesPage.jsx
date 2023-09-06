@@ -4,6 +4,7 @@ import { GameCardsContainer } from '../../components/UI/PageSection/GameCardsCon
 import { useFetching } from '../../components/hooks/useFetching';
 import classes from './AllGamesPage.module.css'
 import { RequestService } from '../../API/RequestService';
+import { Loader } from '../../components/UI/Loader/Loader';
 
 
 export const AllGamesPage = () => {
@@ -16,19 +17,20 @@ export const AllGamesPage = () => {
         console.log(response.data)
     })
 
-    
+
 
     useEffect(() => {
         fetcAllhGames('popularity')
-    },[])
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className={classes.container}>
 
             <NavBar positioning={classes.navBarPositioning} />
-
-            <GameCardsContainer title={'All Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning}/>
-
+            {isLoadingAllGames ? <Loader /> :
+                <GameCardsContainer title={'All Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning} />
+            }
 
         </div>
     )

@@ -4,46 +4,7 @@
     flex-direction: column;
 }
 
-.inputSection {
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    height: 103px;
-    align-self: center;
-}
 
-.icon {
-    width: 37px;
-    height: 37px;
-    color: azure;
-    border-radius: 50px;
-    border: 2px solid azure;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: 0.5s;
-    padding: 3px;
-}
-
-.icon:hover {
-    color: deepskyblue;
-    box-shadow: 0 0 5px 1px azure;
-    transition: 0.5s;
-}
-
-.icon:active {
-    border: 2px solid deepskyblue;
-    box-shadow: 0 0 5px 1px deepskyblue;
-    transform: rotate (360deg);
-    transition: 0.1s;
-}
-
-.input {
-    width: 350px;
-    height: 40px;
-    border-radius: 50px;
-    border: 2px solid azure;
-    background-color: black;
-}
 
 .menuSection {
     display: flex;

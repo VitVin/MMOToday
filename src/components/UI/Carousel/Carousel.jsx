@@ -7,8 +7,9 @@ import CarouselBackgroundImage from "../../../images/CarouselBackgroundImage.jpg
 import { useFetching } from "../../hooks/useFetching"
 import { RequestService } from "../../../API/RequestService"
 import { VideoPlayer } from "../VideoPlayer/VideoPlayer"
+import { Loader } from "../Loader/Loader"
 
-export const Carousel = ({positioning}) => {
+export const Carousel = ({ positioning }) => {
     const [numberOfCurrentGame, setNumberOfCurrentGame] = useState(0);
     const [data, setData] = useState([]);
 
@@ -33,12 +34,10 @@ export const Carousel = ({positioning}) => {
 
 
     return (
+        <>
+            {isLoading ? <Loader /> :
+                <div className={classes.container + ' ' + positioning}>
 
-        <div className={classes.container + ' ' + positioning}>
-
-            {isLoading ? <></>
-                :
-                <>
                     <img className={classes.backgroundPicture} alt="" src={CarouselBackgroundImage} />
 
                     <VideoPlayer positioning={classes.videoPlayerPositioning} id={data[numberOfCurrentGame].id} onEnded={nextVideoSwitcher} />
@@ -53,9 +52,10 @@ export const Carousel = ({positioning}) => {
                             )
                         }
                     </div>
-                </>
-            }
-        </div>
+
+
+                </div>
+            }</>
     )
 
 }

@@ -4,6 +4,7 @@ import { NavBar } from "../../components/UI/NavBar/NavBar"
 import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
 import { useFetching } from "../../components/hooks/useFetching"
 import { RequestService } from "../../API/RequestService"
+import { Loader } from "../../components/UI/Loader/Loader"
 
 
 export const BrowserGamesPage = () => {
@@ -20,15 +21,17 @@ export const BrowserGamesPage = () => {
 
     useEffect(() => {
         fetchGamesByPlatform('browser')
-    },[])
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className={classes.container}>
 
             <NavBar positioning={classes.navBarPositioning} />
 
-            <GameCardsContainer title={'All Browser Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning}/>
-
+            {isLoadingGamesByPlatform ? <Loader /> :
+                <GameCardsContainer title={'All Browser Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning} />
+            }
 
         </div>
     )

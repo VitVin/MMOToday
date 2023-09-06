@@ -9,6 +9,7 @@ import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsCon
 import { Button } from "../../components/UI/Button/Button"
 import { VisitCard } from "../../components/UI/VisitCard/VisitCard"
 import { useNavigate } from "react-router-dom"
+import { Loader } from "../../components/UI/Loader/Loader"
 
 export const HomePage = () => {
     const [gamesData, setGamesData] = useState([]);
@@ -33,6 +34,7 @@ export const HomePage = () => {
         fetchSortedGames('popularity')
         fetchGamesByPlatform('pc')
         fetchGamesByPlatform('browser')
+        window.scrollTo(0, 0)
     }, [])
 
 
@@ -40,11 +42,16 @@ export const HomePage = () => {
         <>
 
             <div className={classes.container}>
-                <WelcomeSection positioning={classes.welcomeSection} buttonPositioning={classes.buttonPositioning}/>
+                <WelcomeSection positioning={classes.welcomeSection} buttonPositioning={classes.buttonPositioning} />
                 <NavBar />
                 <Carousel positioning={classes.carouselPositioning} />
-             
-                {isLoading ? <p>Loading</p> :
+
+                {isLoading ?
+
+                    <Loader isLoading={isLoading} />
+
+
+                    :
                     <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
                         elementsPositioning={classes.elements}
                         title={'Most Played Today'}
@@ -52,26 +59,26 @@ export const HomePage = () => {
                         gamesData={gamesData} />
                 }
 
-                {isLoadingGamesByPlatform ? <p>Loading</p> :
+                {isLoadingGamesByPlatform ? <Loader isLoading={isLoadingGamesByPlatform} /> :
+                <>
                     <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
                         elementsPositioning={classes.elements}
                         title={'PC Games'}
                         diarection={'row'}
                         gamesData={PCgames} />
 
-                }   {isLoadingGamesByPlatform ? <p>Loading</p> :
-
                     <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
                         elementsPositioning={classes.elements}
                         title={'Browser Games'}
                         diarection={'row'}
                         gamesData={browserGames} />
+                        </>
                 }
 
-                <Button positioning={classes.buttonPositioning} title={'Browse games using Filters'} onClick={()=> router('/Search')}/>
+                <Button positioning={classes.buttonPositioning} title={'Browse games using Filters'} onClick={() => router('/Search')} />
 
                 <div className={classes.visitCardConteiner}>
-                    <VisitCard positioning={classes.visitCardPositioning}/>
+                    <VisitCard positioning={classes.visitCardPositioning} />
                 </div>
             </div>
 

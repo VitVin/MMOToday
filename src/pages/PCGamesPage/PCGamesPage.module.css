@@ -5,7 +5,9 @@
     background: fixed radial-gradient(50% 70%, deepskyblue, rgb(0, 0, 0));
     background-position: center;
     width: 100vw;
+    min-height: 1000px;
 }
+
 
 .navBarPositioning {
     border-top: 2px solid rgb(48, 49, 51);

@@ -9,6 +9,7 @@ import { ColoredButton } from "../../components/UI/ColoredButton/ColoredButton"
 import { ScreenshotsList } from "../../components/UI/ScreenshotsList/ScreenshotsList"
 import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
 import { NavBar } from "../../components/UI/NavBar/NavBar"
+import { Loader } from "../../components/UI/Loader/Loader"
 
 export const SpecificGamePage = () => {
     const params = useParams();
@@ -19,7 +20,6 @@ export const SpecificGamePage = () => {
     const [fetchGameData, isLoading, error] = useFetching(async (id) => {
         const response = await RequestService.getSpecificGame(id)
         setGameData(response.data)
-        console.log(gameData)
     })
 
 
@@ -33,6 +33,7 @@ export const SpecificGamePage = () => {
 
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         fetchGameData(params.id)
         fetchGamesFromTop('popularity')
     }, [params.id])
@@ -43,10 +44,10 @@ export const SpecificGamePage = () => {
     return (
         <>
 
-            {isLoading ? <></> :
-                <div className={classes.mainContainer}>
-                    <NavBar positioning={classes.navBarPositioning}/>
 
+            <div className={classes.mainContainer}>
+                <NavBar positioning={classes.navBarPositioning} />
+                {isLoading ? <Loader /> :
                     <div className={classes.containerWraper}>
 
                         <div className={classes.sideSection}>
@@ -87,15 +88,11 @@ export const SpecificGamePage = () => {
                             {gameData.minimum_system_requirements !== undefined ?
                                 <DescriptionSection title={'Minimum System Requirements'}>
                                     <div className={classes.minSysReqContainer}>
-                                      
-                                            <p>OS: <br /> <span>{gameData.minimum_system_requirements.os}</span></p>
-                                            <p>Memory: <br /><span>{gameData.minimum_system_requirements.memory}</span></p>
-                                            <p>Storage: <br /><span>{gameData.minimum_system_requirements.storage}</span></p>
-                                       
-                                       
-                                            <p>Processor: <br /><span>{gameData.minimum_system_requirements.processor}</span></p>
-                                            <p>Graphics: <br /><span>{gameData.minimum_system_requirements.graphics}</span></p>
-                                        
+                                        <p>OS: <br /> <span>{gameData.minimum_system_requirements.os}</span></p>
+                                        <p>Memory: <br /><span>{gameData.minimum_system_requirements.memory}</span></p>
+                                        <p>Storage: <br /><span>{gameData.minimum_system_requirements.storage}</span></p>
+                                        <p>Processor: <br /><span>{gameData.minimum_system_requirements.processor}</span></p>
+                                        <p>Graphics: <br /><span>{gameData.minimum_system_requirements.graphics}</span></p>
                                     </div>
                                 </DescriptionSection >
                                 : <></>
@@ -111,9 +108,9 @@ export const SpecificGamePage = () => {
                         </div>
 
                     </div>
+                }
+            </div>
 
-                </div>
-            }
 
 
 

@@ -1,9 +1,10 @@
 .container {
     display: flex;
     flex-direction: column;
-    background: fixed radial-gradient( 50% 70%,  deepskyblue, rgb(0, 0, 0));
+    background: fixed radial-gradient(50% 70%, deepskyblue, rgb(0, 0, 0));
     width: 100vw;
     min-height: 1000px;
+    
 }
 
 .gameCardsPositioning {
@@ -19,4 +20,66 @@
 
 .filters {
     width: 100vw;
+}
+
+.toast{
+    background-color: rgba(0, 0, 0, 1);
+    border: 3px solid deepskyblue;
+    color: azure;
+    font-size: 20px;
+}
+
+.inputSection {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    height: 103px;
+    align-self: center;
+}
+
+.icon {
+    width: 37px;
+    height: 37px;
+    color: azure;
+    border-radius: 50px;
+    border: 2px solid azure;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: 0.5s;
+    padding: 3px;
+}
+
+.icon:hover {
+    color: deepskyblue;
+    box-shadow: 0 0 5px 1px azure;
+    transition: 0.5s;
+}
+
+.icon:active {
+    border: 2px solid deepskyblue;
+    box-shadow: 0 0 5px 1px deepskyblue;
+    transition: 0.1s;
+}
+
+.input {
+    width: 350px;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid azure;
+    background-color: black;
+    outline: none;
+    transition: 0.5s;
+}
+
+.input:hover{
+    color: deepskyblue;
+    box-shadow: 0 0 5px 1px deepskyblue;
+    transition: 0.5s;
+}
+
+.input:focus{
+    border: 2px solid deepskyblue;
+    box-shadow: 0 0 5px 1px deepskyblue;
+   
+    transition: 0.5s;
 }

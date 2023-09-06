@@ -4,6 +4,7 @@ import { GameCardsContainer } from '../../components/UI/PageSection/GameCardsCon
 import { useFetching } from '../../components/hooks/useFetching';
 import classes from './PCGamesPage.module.css'
 import { RequestService } from '../../API/RequestService';
+import { Loader } from '../../components/UI/Loader/Loader';
 
 
 export const PCGamesPage = () => {
@@ -16,20 +17,21 @@ export const PCGamesPage = () => {
         console.log(response.data)
     })
 
-    
+
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         fetchGamesByPlatform('pc')
-    },[])
+    }, [])
 
     return (
         <div className={classes.container}>
 
             <NavBar positioning={classes.navBarPositioning} />
 
-            <GameCardsContainer title={'All PC Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning}/>
-
-
+            {isLoadingGamesByPlatform ? <Loader /> :
+                <GameCardsContainer title={'All PC Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning} />
+            }
         </div>
     )
 
