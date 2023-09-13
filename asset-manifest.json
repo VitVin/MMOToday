@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/SiteAboutGames/static/css/main.b84a1248.css",
-    "main.js": "/SiteAboutGames/static/js/main.24f92c6b.js",
+    "main.css": "/SiteAboutGames/static/css/main.768c73b1.css",
+    "main.js": "/SiteAboutGames/static/js/main.2c0be338.js",
     "static/media/WelcomeSectionImage.png": "/SiteAboutGames/static/media/WelcomeSectionImage.8051d8917d2ed3374472.png",
     "static/media/VisitCardLogo.png": "/SiteAboutGames/static/media/VisitCardLogo.09342c3d1b126297db3c.png",
     "static/media/CarouselBackgroundImage.jpg": "/SiteAboutGames/static/media/CarouselBackgroundImage.2cbf7b90da91be4b6a73.jpg",
     "static/media/VideoBackgroundImage.jpg": "/SiteAboutGames/static/media/VideoBackgroundImage.228cd29f0a307a90a08c.jpg",
     "static/media/Logo.png": "/SiteAboutGames/static/media/Logo.6ec99e29c4643e9cb625.png",
     "index.html": "/SiteAboutGames/index.html",
-    "main.b84a1248.css.map": "/SiteAboutGames/static/css/main.b84a1248.css.map",
-    "main.24f92c6b.js.map": "/SiteAboutGames/static/js/main.24f92c6b.js.map"
+    "main.768c73b1.css.map": "/SiteAboutGames/static/css/main.768c73b1.css.map",
+    "main.2c0be338.js.map": "/SiteAboutGames/static/js/main.2c0be338.js.map"
   },
   "entrypoints": [
-    "static/css/main.b84a1248.css",
-    "static/js/main.24f92c6b.js"
+    "static/css/main.768c73b1.css",
+    "static/js/main.2c0be338.js"
   ]
 }
