@@ -8,12 +8,19 @@
     min-height: 1000px;
 }
 
-.welcomeSection {}
-
 .buttonPositioning {
-    width: 10vw;
-    height: 10vh;
+    height: 70px;
+    width: 150px;
+    max-height: 100px;
     margin-top: 30px;
+    flex-shrink: 1;
+    flex-grow: 1;
+ 
+}
+
+.navBarPositioning{
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .carouselPositioning {
@@ -23,12 +30,10 @@
 
 .gameCardsContainerPositioning {
     margin: 50px 30px 0px;
+}
 
-    & .elements {
-        width: 30vw;
-        height: 43vh;
-        margin: 10px;
-    }
+.elements {
+    margin: 10px;
 }
 
 .visitCardConteiner {
@@ -44,139 +49,19 @@
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 830px) {
+
+
     .gameCardsContainerPositioning {
-        margin: 50px 20px 0px;
-
-        & .elements {
-            width: 30vw;
-            height: 35vh;
-            margin: 10px;
-        }
-    }
-
-    .buttonPositioning {
-        width: 10vw;
-        height: 7vh;
-    }
-
-    .visitCardPositioning {
-        width: 60vw;
-        padding: 10px;
-    }
-
-    .carouselPositioning {
-        width: 100%;
-        height: 60vh;
+        margin: 50px 10px 0px;
     }
 }
 
-@media (max-width: 992px) {
-    .gameCardsContainerPositioning {
-        margin: 30px 10px 0px;
 
-        & .elements {
-            height: 30vh;
-        }
-    }
 
-    .buttonPositioning {
-        width: 12%;
-    }
-
-    .visitCardPositioning {
-        width: 70vw;
-    }
-
-    .carouselPositioning {
-        height: 50vh;
-    }
-}
-
-@media (max-width: 800px) {
-    .gameCardsContainerPositioning {
-        margin: 30px 0px 0px;
-
-        & .elements {
-            width: 32vw;
-            height: 25vh;
-            margin: 5px;
-        }
-    }
-
-    .buttonPositioning {
-        width: 15vw;
-    }
-
-    .visitCardPositioning {
-        width: 80vw;
-        padding: 0px;
-    }
-
-    .carouselPositioning {
-        height: 40vh;
-    }
-
-}
-
-@media (max-width: 750px) {
-    .gameCardsContainerPositioning {
-        margin: 30px 0px 0px;
-
-        & .elements {
-            width: 80vw;
-            height: 50vh;
-            margin: 5px;
-        }
-    }
-
-    .visitCardPositioning {
-        width: 90vw;
-    }
+@media (max-width: 700px) {
 
     .carouselPositioning {
         display: none;
     }
-
-}
-
-@media (max-width: 500px) {
-    .gameCardsContainerPositioning {
-        margin: 30px 0px 0px;
-
-        & .elements {
-            width: 95vw;
-            height: 45vh;
-            margin: 5px;
-        }
-    }
-
-    .buttonPositioning {
-        width: 30vw;
-        height: 10vh;
-    }
-
-    .visitCardPositioning {
-        flex-direction: column;
-        width: 90vw;
-    }
-
-}
-
-
-@media (max-width: 375px) {
-    .gameCardsContainerPositioning {
-        margin: 30px 0px 0px;
-
-        & .elements {
-            width: 95vw;
-            height: 30vh;
-            margin: 5px;
-        }
-    }
-
-    .buttonPositioning {
-        width: 30vw;
-    }
-
 }

@@ -23,3 +23,13 @@
     font-size: 20;
     color: white;
 }
+
+
+
+@media (max-width: 800px) {
+    .container{
+        border-bottom: 5px solid deepskyblue;
+        box-shadow: 0 0 10px 5px deepskyblue;
+     z-index: 1;
+    }
+}

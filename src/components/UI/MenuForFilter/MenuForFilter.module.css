@@ -1,9 +1,11 @@
 .container {
     display: flex;
     align-items: center;
-    width: calc(100%/7);
     border-radius: 30px;
     flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .topSection {

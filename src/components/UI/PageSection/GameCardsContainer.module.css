@@ -1,6 +1,5 @@
 .container {
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
 }
 
@@ -11,8 +10,9 @@
 }
 
 .gamesCardsContainer {
-    flex-direction: row;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+ 
 }

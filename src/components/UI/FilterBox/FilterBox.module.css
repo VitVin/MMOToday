@@ -37,3 +37,12 @@
     max-height: 0px;
     transition: 1s;
 }
+
+
+
+@media (max-width: 900px) {
+    .menuSection{
+        flex-direction: column;
+        height: fit-content;
+    }
+}

@@ -28,3 +28,10 @@
    
     
 }
+
+
+@media (max-width:780px) {
+  .logo{
+    display: none;
+  }
+}

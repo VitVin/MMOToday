@@ -30,7 +30,7 @@ export const BrowserGamesPage = () => {
             <NavBar positioning={classes.navBarPositioning} />
 
             {isLoadingGamesByPlatform ? <Loader /> :
-                <GameCardsContainer title={'All Browser Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning} />
+                <GameCardsContainer positioning={classes.cardsContainer} title={'All Browser Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning} />
             }
 
         </div>

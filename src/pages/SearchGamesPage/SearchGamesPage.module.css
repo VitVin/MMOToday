@@ -9,23 +9,17 @@
 
 .gameCardsPositioning {
     margin: 10px;
-    width: 30vw;
 }
 
-.navBarPositioning {
-    border-top: 2px solid rgb(48, 49, 51);
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 
 .filters {
     width: 100vw;
 }
 
 .toast{
-    background-color: rgba(0, 0, 0, 1);
+    background-color: azure;
     border: 3px solid deepskyblue;
-    color: azure;
+    color: black;
     font-size: 20px;
 }
 
@@ -35,6 +29,7 @@
     justify-content: center;
     height: 103px;
     align-self: center;
+  
 }
 
 .icon {
@@ -82,4 +77,16 @@
     box-shadow: 0 0 5px 1px deepskyblue;
    
     transition: 0.5s;
+}
+
+
+@media (max-width: 550px) {
+    .inputSection{
+        flex-wrap: wrap;
+        height: 200px;
+    }
+    .input{
+        width: 100%;
+        order: -1;
+    }
 }

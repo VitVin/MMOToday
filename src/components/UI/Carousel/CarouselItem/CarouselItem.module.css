@@ -1,11 +1,7 @@
 .container {
-    margin-top: 2px;
-    width: 15%;
-    height: 100%;
     border-radius: 5%;
     opacity: 0.5;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative;
@@ -13,6 +9,9 @@
     box-shadow: 0 0 20px 5px black;
     border: 2px solid white;
     cursor: pointer;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 10px
 }
 
 .title {
@@ -41,12 +40,8 @@
 
 .selectedContainer{
     scale: 1.1;
-    margin-top: 2px;
-    width: 15%;
-    height: 100%;
     border-radius: 10px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -55,3 +50,4 @@
     margin-inline: 20px;
     transition: all 1s;
 }
+

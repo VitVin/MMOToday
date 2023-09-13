@@ -19,7 +19,7 @@ export const HomePage = () => {
 
     const [fetchSortedGames, isLoading, error] = useFetching(async (sortBy) => {
         const response = await RequestService.getAllGames(sortBy)
-        setGamesData(response.data.slice(0, 3))
+        setGamesData(response.data.slice(0, 6))
     })
 
     const [fetchGamesByPlatform, isLoadingGamesByPlatform, errorPlatformGames] = useFetching(async (platform) => {
@@ -43,7 +43,7 @@ export const HomePage = () => {
 
             <div className={classes.container}>
                 <WelcomeSection positioning={classes.welcomeSection} buttonPositioning={classes.buttonPositioning} />
-                <NavBar />
+                <NavBar positioning={classes.navBarPositioning}/>
                 <Carousel positioning={classes.carouselPositioning} />
 
                 {isLoading ?
@@ -52,27 +52,26 @@ export const HomePage = () => {
 
 
                     :
-                    <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
-                        elementsPositioning={classes.elements}
-                        title={'Most Played Today'}
-                        diarection={'row'}
-                        gamesData={gamesData} />
+              
+                        <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
+                            elementsPositioning={classes.elements}
+                            title={'Most Played Today'}
+                            gamesData={gamesData} />
+                   
                 }
 
                 {isLoadingGamesByPlatform ? <Loader isLoading={isLoadingGamesByPlatform} /> :
-                <>
-                    <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
-                        elementsPositioning={classes.elements}
-                        title={'PC Games'}
-                        diarection={'row'}
-                        gamesData={PCgames} />
+                    <>
+                        <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
+                            elementsPositioning={classes.elements}
+                            title={'PC Games'}
+                            gamesData={PCgames} />
 
-                    <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
-                        elementsPositioning={classes.elements}
-                        title={'Browser Games'}
-                        diarection={'row'}
-                        gamesData={browserGames} />
-                        </>
+                        <GameCardsContainer positioning={classes.gameCardsContainerPositioning}
+                            elementsPositioning={classes.elements}
+                            title={'Browser Games'}
+                            gamesData={browserGames} />
+                    </>
                 }
 
                 <Button positioning={classes.buttonPositioning} title={'Browse games using Filters'} onClick={() => router('/Search')} />

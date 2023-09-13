@@ -8,14 +8,6 @@
     min-height: 1000px;
 }
 
-
-.navBarPositioning {
-    border-top: 2px solid rgb(48, 49, 51);
-    border-bottom: 1px solid white;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 .gamesCardsPositioning{
     margin: 10px;
 }

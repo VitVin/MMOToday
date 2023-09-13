@@ -5,13 +5,13 @@
     flex-direction: column;
     position: relative;
     background-color: white;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .videoPlayerPositioning {
-    width: 50%;
-    height: 80%;
-    margin: 10px;
     position: relative;
+    width: 50%
 }
 
 .backgroundPicture {
@@ -23,14 +23,26 @@
 }
 
 .carouselItemsSection {
-    height: 30%;
-    width: 100%;
     display: flex;
-    justify-content: space-evenly;
     flex-direction: row;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
     position: absolute;
     bottom: 10px;
+}
+
+
+@media (max-width: 900px) {
+
+
+    .videoPlayerPositioning {
+        width: 70%;
+    }
+}
+
+@media (max-width:800px) {
+    .container{
+        background-color: transparent;
+    }
+    .backgroundPicture {
+        display: none;
+    }
 }

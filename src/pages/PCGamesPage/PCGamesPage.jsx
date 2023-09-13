@@ -27,7 +27,7 @@ export const PCGamesPage = () => {
     return (
         <div className={classes.container}>
 
-            <NavBar positioning={classes.navBarPositioning} />
+            <NavBar/>
 
             {isLoadingGamesByPlatform ? <Loader /> :
                 <GameCardsContainer title={'All PC Games'} gamesData={gamesData} elementsPositioning={classes.gamesCardsPositioning} />

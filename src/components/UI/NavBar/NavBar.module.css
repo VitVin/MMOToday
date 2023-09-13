@@ -1,27 +1,112 @@
 .container {
     width: 100%;
     height: 50px;
-    margin-top: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid white;
+    border-top: 2px solid rgb(48, 49, 51);
     box-shadow: 0px 10px 10px 0px rgb(50, 56, 62);
+    text-decoration: none;
     z-index: 1;
-    background: fixed radial-gradient(30% 50%, deepskyblue, rgb(28, 30, 34));
 }
 
-.link {
+.burgerIcon {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background-color: deepskyblue;
+    border: 3px double azure;
+    padding: 10px;
+    border-radius: 70px;
+    z-index: 2;
+}
+
+.burgerIconClosed {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background-color: deepskyblue;
+    border: 3px double azure;
+    padding: 10px;
+    border-radius: 70px;
+    z-index: 2;
+}
+
+.link,
+.linkAlternative {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 25%;
     color: white;
+    text-decoration: none;
     border-radius: 10px;
 }
 
-.link:hover {
-    background: radial-gradient( deepskyblue, transparent);
+.link:hover,
+.linkAlternative:hover {
+    background: radial-gradient(deepskyblue, transparent);
+}
+
+.linkAlternative {
+    display: none;
+}
+
+
+
+@media (max-width:780px) {
+
+    .container {
+        display: none;
+        position: fixed;
+        flex-direction: column;
+        height: fit-content;
+        justify-content: center;
+        background-color: rgb(28, 30, 34);
+        margin: 0px;
+        border-bottom: none;
+    }
+
+    .burgerIcon {
+        display: flex;
+
+        ~.container {
+            display: flex;
+        }
+    }
+
+    .burgerIconClosed {
+        display: flex;
+
+        ~.container {
+            display: none;
+        }
+    }
+
+
+    .link,
+    .linkAlternative {
+        display: flex;
+        margin: 10px;
+        padding: 5px;
+        width: 100%;
+        height: 100%;
+    }
 }

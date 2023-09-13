@@ -66,7 +66,7 @@ export const SearchGamesPage = () => {
     return (
         <div className={classes.container}>
             <Toaster toastOptions={{ className: classes.toast }} />
-            <NavBar positioning={classes.navBarPositioning} />
+            <NavBar/>
 
 
             <div className={classes.mainSection}>
@@ -79,7 +79,10 @@ export const SearchGamesPage = () => {
                             setIsFiltersOpened(false)
                             setTimeout(() => {
                                 setIsFiltersOpened(true)
+                                toast.success('Filters are cleared', { duration: 5000, position: 'bottom-center' });
                             }, 2100);
+                        }else{
+                            toast.success('Filters are cleared', { duration: 5000, position: 'bottom-center' });
                         }
 
                     }} />
