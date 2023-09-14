@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavBar } from '../../components/UI/NavBar/NavBar';
-import { GameCardsContainer } from '../../components/UI/PageSection/GameCardsContainer';
+import { GameCardsContainer } from '../../components/UI/GameCardsContainer/GameCardsContainer';
 import { useFetching } from '../../components/hooks/useFetching';
 import classes from './PCGamesPage.module.css'
 import { RequestService } from '../../API/RequestService';

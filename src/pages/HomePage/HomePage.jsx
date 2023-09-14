@@ -5,7 +5,7 @@ import { WelcomeSection } from "../../components/UI/WelcomeSection/WelcomeSectio
 import classes from "./HomePage.module.css"
 import { RequestService } from "../../API/RequestService"
 import { useFetching } from "../../components/hooks/useFetching"
-import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
+import { GameCardsContainer } from "../../components/UI/GameCardsContainer/GameCardsContainer"
 import { Button } from "../../components/UI/Button/Button"
 import { VisitCard } from "../../components/UI/VisitCard/VisitCard"
 import { useNavigate } from "react-router-dom"

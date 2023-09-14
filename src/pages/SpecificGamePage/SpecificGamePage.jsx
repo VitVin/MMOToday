@@ -7,7 +7,7 @@ import { VideoPlayer } from "../../components/UI/VideoPlayer/VideoPlayer"
 import { DescriptionSection } from "../../components/UI/DescriptionSection/DescriptionSection"
 import { ColoredButton } from "../../components/UI/ColoredButton/ColoredButton"
 import { ScreenshotsList } from "../../components/UI/ScreenshotsList/ScreenshotsList"
-import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
+import { GameCardsContainer } from "../../components/UI/GameCardsContainer/GameCardsContainer"
 import { NavBar } from "../../components/UI/NavBar/NavBar"
 import { Loader } from "../../components/UI/Loader/Loader"
 

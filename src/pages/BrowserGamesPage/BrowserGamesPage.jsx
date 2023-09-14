@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import classes from './BrowserGamesPage.module.css'
 import { NavBar } from "../../components/UI/NavBar/NavBar"
-import { GameCardsContainer } from "../../components/UI/PageSection/GameCardsContainer"
+import { GameCardsContainer } from "../../components/UI/GameCardsContainer/GameCardsContainer"
 import { useFetching } from "../../components/hooks/useFetching"
 import { RequestService } from "../../API/RequestService"
 import { Loader } from "../../components/UI/Loader/Loader"
